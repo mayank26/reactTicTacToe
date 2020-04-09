@@ -5,10 +5,10 @@ const Icon = ({ name }) => {
         switch (name) {
             case 'circle':
                 return <FaRegCircle className="icon"></FaRegCircle>
-            case 'pen':
-                return <FaPen className="icon"></FaPen>
-            default:
+            case 'cross':
                 return <FaTimes className="icon"></FaTimes>
+            default:
+                return <FaPen className="icon"></FaPen>
                 
         }
 }
