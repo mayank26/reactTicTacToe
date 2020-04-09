@@ -28,10 +28,8 @@ const App = () => {
       }
     })
     console.log(`Empty count ${count}`)
-    if (count === 0) {
-        console.log("right place")
+    if (count === 0 || winMessage) {
         setWinMessage("Game Tie")
-      
     }
 
   } 
@@ -101,11 +99,8 @@ const App = () => {
       return toast("already filled", { type: "error" });
     }
 
+    checkGameTie()
     checkIsWinner()
-    if (winMessage) {
-      checkGameTie()
-    }
-    
   };
 
   return (
