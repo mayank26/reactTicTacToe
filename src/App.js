@@ -27,7 +27,6 @@ const App = () => {
         count = count + 1
       }
     })
-    console.log(`Empty count ${count}`)
     if (count === 0 || winMessage) {
         setWinMessage("Game Tie")
     }
@@ -119,7 +118,7 @@ const App = () => {
             </div>
           ) : (
             <h1 className="text-center text-warning">
-              {isCross ? "Cross" : "Circle"} turns
+              {isCross ? "Cross's" : "Circle's"} turn
             </h1>
           )}
           <div className="grid">
