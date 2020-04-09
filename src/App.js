@@ -13,12 +13,27 @@ const itemArray = new Array(9).fill("empty");
 const App = () => {
   const [isCross, setIsCross] = useState(false);
   const [winMessage, setWinMessage] = useState("");
+  const [gameTie, setGameTie] = useState(false)
 
   const reloadGame = () => {
     setIsCross(false);
     setWinMessage("");
     itemArray.fill("empty", 0, 9);
   };
+
+  const checkGameTie = () => {
+    let count = 0
+    itemArray.map((item) => {
+      if (item == "empty") {
+        count = count + 1
+      }
+    })
+
+    if (count == 0 && winMessage == "") {
+      setWinMessage("Game Tie")
+    }
+
+  } 
 
   const checkIsWinner = () => {
     //  checking  winner of the game
@@ -84,8 +99,10 @@ const App = () => {
     } else {
       return toast("already filled", { type: "error" });
     }
-
-    checkIsWinner();
+    
+    checkIsWinner()
+    checkGameTie()
+    
   };
 
   return (
